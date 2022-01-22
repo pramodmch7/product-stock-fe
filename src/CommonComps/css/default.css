@@ -1,0 +1,32 @@
+.ReactTable .rt-th,
+.ReactTable .rt-td {
+  white-space: unset !important;
+  color: purple;
+  padding: 0px 2px;
+  word-break: break-all;
+}
+.ReactTable .rt-tr {
+  align-items: center;
+}
+
+.ReactTable .rt-tbody .rt-td {
+  border-right: 1px solid rgba(0, 0, 0, 0.356);
+}
+
+.rt-td span .btn {
+  /* color: black; */
+  width: 2.5rem;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.COM {
+  display: inline;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+}
+.COM-Mar {
+  margin: 0px 2px;
+}
