@@ -4,8 +4,28 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button } from "@material-ui/core";
+import EditIcon from "@material-ui/icons/Edit";
+import DeleteIcon from "@material-ui/icons/Delete";
+import { red, teal } from "@material-ui/core/colors";
+// import Button from "../CommonComps/Button";
 
-import Button from "../CommonComps/Button";
+const classes = {
+  editIcon: {
+    backgroundColor: teal[100],
+    color: teal[900],
+    border: `1px solid ${teal[900]}`,
+    borderRadius: "4px",
+    fontWeight: 700,
+  },
+  deleteIcon: {
+    backgroundColor: red[100],
+    color: red[900],
+    border: `1px solid ${red[900]}`,
+    borderRadius: "4px",
+    fontWeight: 700,
+  },
+};
 
 let api = axios.create({
   baseURL: `/`,
@@ -124,23 +144,25 @@ function InfoView({ data, views }) {
                     },
                   }}
                 >
-                  <Button btnName="Edit" btnStyle="btn-info" btnSize="btn-md">
-                    <span className="material-icons COM COM-Mar">
-                      mode_edit_outline
-                    </span>
-                    <span className="COM">Edit</span>
+                  <Button
+                    color="secondary"
+                    variant="outlined"
+                    size="large"
+                    startIcon={<EditIcon />}
+                    style={classes.editIcon}
+                  >
+                    Edit
                   </Button>
                 </Link>
                 <Button
-                  btnName="Del"
-                  btnStyle="btn-danger"
-                  btnSize="btn-md"
+                  color="secondary"
+                  variant="outlined"
+                  size="large"
+                  startIcon={<DeleteIcon />}
                   onClick={(e) => DeleteItems(e, data)}
+                  style={classes.deleteIcon}
                 >
-                  <span className="material-icons COM COM-Mar">
-                    delete_outline
-                  </span>
-                  <span className="COM">Del</span>
+                  Del
                 </Button>
               </span>
             </div>

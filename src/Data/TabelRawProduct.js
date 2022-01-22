@@ -73,6 +73,8 @@ export const RPColumns = {
       field: "RPP",
       filtering: false,
       width: "10%",
+      type: "currency",
+      currencySetting: { currencyCode: "AED" },
     },
     {
       title: "Cost",
